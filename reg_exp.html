@@ -16,27 +16,27 @@
   </div>
   <button>click me</button>
 </body>
-<script type="text/javascript" rel="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.0.js"></script>
 <script type="text/javascript">
-   $(function(){
-      var str; //字符串
-      var reg; //正则表达式，将匹配 str 这个字符串
-      var reg_str = $(".reg");
-      $("button").on("click",function(){
-        str = $(".str").val();
-        reg = new RegExp("\\d","g");
+  $(function(){
+    var str; //字符串
+    var reg; //正则表达式，将匹配 str 这个字符串
+    var reg_str = $(".reg");
+    $("button").on("click",function() {
+      str = $(".str").val();
+      reg = new RegExp("\\d","g");
+      if(str !== null){
+         console.info(str);
+        str = str.match(reg);
+        console.info(str);
         if(str !== null){
-           console.info(str);
-          str = str.match(reg);
-          console.info(str);
-          if(str !== null){
-            reg_str.val(str);
-            console.info(reg_str);
-          }else {
-            console.log("没有找到相匹配的字符");
-          };
+          reg_str.val(str);
+          console.info(reg_str);
+        }else {
+          console.log("没有找到相匹配的字符");
         };
-      });
- });
+      };
+    });
+  });
 </script>
 </html>
